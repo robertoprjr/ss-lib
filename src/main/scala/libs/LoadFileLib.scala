@@ -16,11 +16,11 @@ object LoadFileLib {
       printSchema = vars.printSchema)
   }
 
-  def loadCSVFileToDF(spark: SparkSession,
-                      filePath: String,
-                      optionsMap: Map[String, String],
-                      nickName: String,
-                      printSchema: Boolean = false) : DataFrame = {
+  private def loadCSVFileToDF(spark: SparkSession,
+                              filePath: String,
+                              optionsMap: Map[String, String],
+                              nickName: String,
+                              printSchema: Boolean = false) : DataFrame = {
 
     val df = spark.read.options(optionsMap).csv(filePath)
 
