@@ -1,2 +1,3 @@
 # ss-lib
-A Scala/Spark library of funtions
+*A Scala/Spark library of functions*
+This is a prototype for a internal project 
