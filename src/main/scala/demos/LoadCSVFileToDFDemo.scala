@@ -1,16 +1,13 @@
 package demos
 
 import libs.LoadFileLib._
-import libs.StartLib._
+import org.apache.spark.sql.SparkSession
 import types.LoadFileType
 import vars.{DefaultVars, LoadFileVars}
 
-object LoadFileDemo {
+object LoadCSVFileToDFDemo {
 
-  def show(): Unit = {
-
-    val spark = buildSparkLocalSession(DefaultVars.appName, DefaultVars.coreNumbers)
-    import spark.implicits._
+  def demo(spark: SparkSession): Unit = {
 
     // Load Countries
     val countryPopulationLoadFileVars = LoadFileVars.getVars(LoadFileType.CountryPopulation)

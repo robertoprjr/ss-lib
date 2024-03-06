@@ -7,13 +7,13 @@
 
 ---
 
-## LoadFile (csv)
+## loadCSVFileToDF() / Load CSV File
 
 #### Target:
 **Have a flexible way to load csv files in a Spark DataFrame**
 
 #### Modules:
-- *demos/LoadFileDemo*: to show an execution
+- *demos/LoadCSVFileToDFDemo*: to show an execution of the function loadCSVFileToDF() 
 - *libs/LoadFileLib*: to execute the Spark command to load the defined file
 - *types/LoadFileType*: an enumeration with a strong typification to list, in an abstract way, the files to load
 - *vars/LoadFileVars*: an interface/trait to be a model for the variables that the load function will need and a derivative object to be a switch between the abstraction of the file and the real variables to get this file
@@ -54,7 +54,7 @@ But, if you look it with some criteria, you can find some problems:
 And, of course, the use of this without any encapsulation or structure do not show a problem right now in just an example but, when we will work with a bunch of files, it will be a problem too.
 
 To have a better solution we can apply some concepts of best practices of development, such as:
-- ***SOLID***: Applying concepts of SRP (Single Responsibility Principal) and (OCP) Open/Close Principal
+- ***SOLID***: Applying concepts of SRP (Single Responsibility Principal) and OCP (Open/Close Principal)
 - ***Composition***: Even not apply a specific design pattern here because these classes don't have an internal behavior, the implementation was based in composition that is base for some patterns
 - ***Clean Code***: Ubiquitous Language for example
 
@@ -119,15 +119,15 @@ class CountryPopulationLoadFileVars() extends LoadFileVars {
                               nickName: String,
                               printSchema: Boolean = false) : DataFrame = {
 
-    val df = spark.read.options(optionsMap).csv(filePath)
+    val dfLoaded = spark.read.options(optionsMap).csv(filePath)
 
     showInfo(s"File (${nickName} : ${filePath}) loaded...")
-    if (printSchema) df.printSchema()
+    if (printSchema) dfLoaded.printSchema()
 
-    df
+    dfLoaded
   }
 ```
-6. And the demo could be like that:
+6. And the code could be like that:
 ```scala
     // Load Countries
     val countryPopulationLoadFileVars = LoadFileVars.getVars(LoadFileType.CountryPopulation)
@@ -137,3 +137,85 @@ class CountryPopulationLoadFileVars() extends LoadFileVars {
       countryPopulationLoadFileVars)
 ```
 ---
+## joinNullSafe() / Join with columns preserving null values
+
+#### Target:
+**Have a function to make a simple join with null values also**
+
+#### Explanations:
+The default for Spark join are to ignore null values but, sometimes, we need to make some joins even with fields that are null in both sides.
+It happen more yet in cases of treatment of data.
+
+#### Parameters:
+```scala
+  /***
+   * Simple join function considering null values
+   * @param dfLeft
+   *  Source dataframe that will be on the left side of the join
+   * @param dfRight
+   *  Source dataframe that will be on the right side of the join
+   * @param columnsToJoin
+   *  Array of columns to join (columns with the same name in both sides)
+   * @param joinType
+   *  Type of join equal the original join: (inner, left, right, full, ...)
+   * @return
+   *  Joined dataframe
+   */
+
+  def joinNullSafe(dfLeft: DataFrame,
+                   dfRight: DataFrame,
+                   columnsToJoin: Array[String],
+                   joinType: String = "inner") : DataFrame = ...
+```
+#### Results: 
+1. Based in the following dataframe in the left side of the join:
+```scala
+    val dfExample1 = Seq(
+      ("A", "01", "Key A01"),
+      ("A", "02", "Key A02"),
+      ("B", "01", "Key B01"),
+      ("B", null, "Key B"),
+      ("C", "01", "Key C01")
+    ).toDF("key_letter", "digit", "key_description")
+```
+2. And based in the following dataframe in the right side of the join:
+```scala
+    val dfExample2 = Seq(
+      ("A", "01", 1, "Item A01.1"),
+      ("A", "01", 2, "Item A01.2"),
+      ("A", "02", 1, "Item A02.1"),
+      ("B", "01", 1, "Item B01.1"),
+      ("B", "01", 2, "Item B01.2"),
+      ("B", null, 1, "Item B.1"),
+      ("B", null, 2, "Item B.2"),
+      ("D", "01", 1, "Item D01.1")
+    ).toDF("key_letter", "digit", "item", "item_description")
+```
+3. The results for a inner join (without and with nulls) are:
+
+**Without null**:
+```
++----------+-----+---------------+----+----------------+
+|key_letter|digit|key_description|item|item_description|
++----------+-----+---------------+----+----------------+
+|         A|   01|        Key A01|   1|      Item A01.1|
+|         A|   01|        Key A01|   2|      Item A01.2|
+|         A|   02|        Key A02|   1|      Item A02.1|
+|         B|   01|        Key B01|   1|      Item B01.1|
+|         B|   01|        Key B01|   2|      Item B01.2|
++----------+-----+---------------+----+----------------+
+```
+**With null safe**
+```
++----------+-----+---------------+----+----------------+
+|key_letter|digit|key_description|item|item_description|
++----------+-----+---------------+----+----------------+
+|         A|   01|        Key A01|   1|      Item A01.1|
+|         A|   01|        Key A01|   2|      Item A01.2|
+|         A|   02|        Key A02|   1|      Item A02.1|
+|         B|   01|        Key B01|   1|      Item B01.1|
+|         B|   01|        Key B01|   2|      Item B01.2|
+|         B| null|          Key B|   1|        Item B.1|
+|         B| null|          Key B|   2|        Item B.2|
++----------+-----+---------------+----+----------------+
+```
