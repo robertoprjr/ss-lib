@@ -9,8 +9,9 @@ object Main {
     println("--- END :: Load Session ------")
 
     println("--- BEGIN :: Main Demo ----")
-    LoadCSVFileToDFDemo.demo(spark)
-    JoinNullSafeDemo.demo(spark)
+    //LoadCSVFileToDFDemo.demo(spark)
+    //JoinNullSafeDemo.demo(spark)
+    ArrayFunctionsDemo.demo(spark)
 
     Console.in.read()
     println("--- END :: Main Demo ------")

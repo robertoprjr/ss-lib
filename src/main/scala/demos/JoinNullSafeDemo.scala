@@ -1,7 +1,7 @@
 package demos
 
 import libs.JoinLib.joinNullSafe
-import org.apache.spark.sql.{SQLContext, SparkSession}
+import org.apache.spark.sql.SparkSession
 import vars.DefaultVars
 
 object JoinNullSafeDemo {
