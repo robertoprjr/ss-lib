@@ -38,7 +38,7 @@ object JoinLib {
 
     val fullColumnExpr : Column = columnsToJoin.tail.foldLeft(columnExpr) {
       (columnExpr, columnName) =>
-        columnExpr && dfLeft(columnName) <=> dfRightRenamed(s"${columnName}$usedSuffix")
+        columnExpr && dfLeft(columnName) <=> dfRightRenamed(s"$columnName$usedSuffix")
     }
 
     val dfJoined : DataFrame = dfLeft.join(dfRightRenamed, fullColumnExpr, joinType)
@@ -46,13 +46,13 @@ object JoinLib {
     val dfJoinedCoalesced: DataFrame =
       dfJoined.select(dfJoined.columns.map { columnName =>
         if (columnsToJoin.contains(columnName))
-          coalesce(col(columnName), col(s"${columnName}$usedSuffix")).as(columnName)
+          coalesce(col(columnName), col(s"$columnName$usedSuffix")).as(columnName)
         else
           col(columnName)
       }: _*)
 
     dfJoinedCoalesced.drop(columnsToJoin.map { columnName =>
-      s"${columnName}$usedSuffix"
+      s"$columnName$usedSuffix"
     }: _*)
   }
 }

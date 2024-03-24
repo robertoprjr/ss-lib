@@ -48,7 +48,7 @@ object LoadFileLib {
 
     val dfLoaded : DataFrame = spark.read.options(optionsMap).csv(filePath)
 
-    showInfo(s"File (${nickName} : ${filePath}) loaded...")
+    showInfo(s"File ($nickName : $filePath) loaded...")
     if (printSchema) dfLoaded.printSchema()
 
     dfLoaded
