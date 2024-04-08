@@ -55,15 +55,48 @@ object ArrayFunctionsDemo {
     val matchToFind = Array("A MATCH B", "A NO MATCH C", "")
 
     val setForNulls = Array("")
+    val fieldsTo: Map[String, Array[String]] = Map("result.valid" -> validToFind,
+                                                   "result.match" -> matchToFind).withDefaultValue(Array("N/A"))
 
     def coln(colName: String) : Column = coalesce(col(colName), lit(setForNulls))
 
-    // Adding result in the df using the array_overlap, array_intersect, treating null
-    val dfExample2 = dfExample1
-      .withColumn("overlap_valid", arrays_overlap(coln("result.valid"), lit(validToFind)))
-      .withColumn("overlap_match", arrays_overlap(coln("result.match"), lit(matchToFind)))
-      .withColumn("size_in_valid", size(array_intersect(coln("result.valid"), lit(validToFind))))
-      .withColumn("size_in_match", size(array_intersect(coln("result.match"), lit(matchToFind))))
+    def rep_dot(name: String) : String = name.replace(".", "_")
+
+    def a_function(prefix: String,
+                   colName: String,
+                   arrays_function: (Column, Column) => Column,
+                   compareTo: Array[String]) : Column = {
+
+      arrays_function(coln(s"$colName"), lit(compareTo)).as(s"${prefix}_${rep_dot(colName)}")
+    }
+
+    def addTestArrayFields(schema: StructType,
+                           fieldsToTest: Map[String, Array[String]],
+                           prefix: String = "",
+                           primary: Boolean = true) : Array[Column] = {
+
+      schema.fields.flatMap(actualField => {
+
+        val colName: String = if (prefix == "") actualField.name else s"${prefix}.${actualField.name}"
+
+        actualField.dataType match {
+          case st: StructType =>
+            Array(col(colName).as(colName)) ++ addTestArrayFields(st, fieldsToTest, colName, false)
+          case _ =>
+            if (fieldsToTest(colName).sameElements(Array("N/A")) && primary)
+              Array(col(colName).as(colName))
+            else
+              Array(
+                a_function("overlap", colName, arrays_overlap, fieldsToTest(colName)),
+                a_function("intersect", colName, array_intersect, fieldsToTest(colName)),
+                a_function("except", colName, array_except, fieldsToTest(colName)),
+                a_function("union", colName, array_union, fieldsToTest(colName))
+              )
+        }
+      })
+    }
+
+    val dfExample2 = dfExample1.select(addTestArrayFields(dfExample1.schema, fieldsTo): _*)
 
     dfExample2.show(DefaultVars.showLines, false)
   }

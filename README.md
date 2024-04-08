@@ -11,3 +11,4 @@
 
 - #### [loadCSVFileToDF()](readme/LoadCSVFileToDFDemo.md) / Load CSV File
 - #### [joinNullSafe()](readme/JoinNullSafeDemo.md) / Join with columns preserving null values
+- #### [Array Functions Demo](readme/ArrayFunctionsDEmo.md) / Demo of some array functions
