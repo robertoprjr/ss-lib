@@ -5,6 +5,8 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import vars.DefaultVars
 
+import scala.annotation.tailrec
+
 object ArrayFunctionsDemo {
   def demo(spark: SparkSession): Unit = {
 

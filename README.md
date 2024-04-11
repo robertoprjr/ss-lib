@@ -9,6 +9,6 @@
 
 ### There is the list of functions and/or demos available in this Scala/Spark library: 
 
-- #### [loadCSVFileToDF()](readme/LoadCSVFileToDFDemo.md) / Load CSV File
-- #### [joinNullSafe()](readme/JoinNullSafeDemo.md) / Join with columns preserving null values
+- #### [Load CSV File to DF](readme/LoadCSVFileToDFDemo.md) / Function/Solution to load CSV file
+- #### [Join Null Safe](readme/JoinNullSafeDemo.md) / Function to join with columns preserving null values
 - #### [Array Functions Demo](readme/ArrayFunctionsDEmo.md) / Demo of some array functions
