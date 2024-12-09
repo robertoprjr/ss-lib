@@ -15,5 +15,7 @@ object LoadFileVars {
   def getVars(loadFileType: LoadFileType): LoadFileVars = loadFileType match {
     case LoadFileType.CountryPopulation => new CountryPopulationLoadFileVars()
     case LoadFileType.CityPopulation => new CityPopulationLoadFileVars()
+    case LoadFileType.CombinedFlights2022 => new CombinedFlights2022LoadFileVars()
+    case LoadFileType.FlightsItineraries => new FlightsItinerariesLoadFileVars()
   }
 }
