@@ -12,7 +12,8 @@ object Main {
     //LoadCSVFileToDFDemo.demo(spark)
     //JoinNullSafeDemo.demo(spark)
     //ArrayFunctionsDemo.demo(spark)
-    BJoinDemo.demo(spark)
+    //BJoinDemo.demo(spark)
+    PrepareDFDemo.demo(spark)
 
     Console.in.read()
     println("--- END :: Main Demo ------")
