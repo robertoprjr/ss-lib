@@ -47,7 +47,7 @@
 8350625,8074031,"Suzhou","China",0.0343,"w",46
 8330528,8064949,"Surat","India",0.0329,"w",47
 8161231,7775865,"Dar es Salaam","Tanzania",0.0496,"w",48
-8089689,8212793,"New York City","NY",-0.015,"us","United States",49
+8089689,8212793,"New York City","NY",-0.015,"us",49
 7921134,7711305,"Baghdad","Iraq",0.0272,"w",50
 7830377,7680967,"Shenyang","China",0.0195,"w",51
 7820551,7682430,"Riyadh","Saudi Arabia",0.018,"w",52
@@ -128,7 +128,7 @@
 3852459,3813082,"Curitiba","Brazil",0.0103,"w",127
 3830678,3729351,"Bekasi","Indonesia",0.0272,"w",128
 3800193,3710845,"Faisalabad","Pakistan",0.0241,"w",129
-3790742,3806490,"Los Angeles","CA",-0.0041,"us","United States",130
+3790742,3806490,"Los Angeles","CA",-0.0041,"us",130
 3661446,3580904,"Guiyang","China",0.0225,"w",131
 3636547,3480101,"Port Harcourt","Nigeria",0.045,"w",132
 3605238,3482456,"Thrissur","India",0.0353,"w",133
@@ -198,7 +198,7 @@
 2633661,2603243,"Tashkent","Uzbekistan",0.0117,"w",197
 2633243,2579762,"Patna","India",0.0207,"w",198
 2624865,2564502,"Bhopal","India",0.0235,"w",199
-2599059,2632049,"Chicago","IL",-0.0125,"us","United States",200
+2599059,2632049,"Chicago","IL",-0.0125,"us",200
 2570980,2514077,"Tangerang","Indonesia",0.0226,"w",201
 2555722,2492230,"Nantong","China",0.0255,"w",202
 2536449,2504505,"Brisbane","Australia",0.0128,"w",203
@@ -225,7 +225,7 @@
 2341433,2342302,"Sendai","Japan",-0.0004,"w",224
 2338724,2318850,"Taoyuan","Taiwan",0.0086,"w",225
 2332531,2287166,"Xuzhou","China",0.0198,"w",226
-2325324,2314101,"Houston","TX",0.0049,"us","United States",227
+2325324,2314101,"Houston","TX",0.0049,"us",227
 2317650,2203025,"Aleppo","Syria",0.052,"w",228
 2297216,2259787,"Tijuana","Mexico",0.0166,"w",229
 2294589,2258396,"Esfahan","Iran",0.016,"w",230
@@ -322,7 +322,7 @@
 1693701,1668785,"Jilin","China",0.0149,"w",321
 1693375,1642347,"Anyang","China",0.0311,"w",322
 1692770,1673220,"Auckland","New Zealand",0.0117,"w",323
-1682515,1663462,"Phoenix","AZ",0.0115,"us","United States",324
+1682515,1663462,"Phoenix","AZ",0.0115,"us",324
 1678028,1660737,"Tabriz","Iran",0.0104,"w",325
 1676167,1650319,"Muscat","Oman",0.0157,"w",326
 1665023,1639613,"Calgary","Canada",0.0155,"w",327
@@ -357,9 +357,9 @@
 1532970,1527728,"Yekaterinburg","Russia",0.0034,"w",356
 1532902,1529472,"Gwangju","South Korea",0.0022,"w",357
 1525749,1483320,"Yiwu","China",0.0286,"w",358
-1522814,1545036,"Philadelphia","PA",-0.0144,"us","United States",359
+1522814,1545036,"Philadelphia","PA",-0.0144,"us",359
 1520628,1496298,"Chaozhou","China",0.0163,"w",360
-1510687,1491798,"San Antonio","TX",0.0127,"us","United States",361
+1510687,1491798,"San Antonio","TX",0.0127,"us",361
 1508846,1475016,"Gwalior","India",0.0229,"w",362
 1508037,1459678,"Ganzhou","China",0.0331,"w",363
 1499603,1443429,"Homs","Syria",0.0389,"w",364
@@ -394,7 +394,7 @@
 1406091,1376453,"Zunyi","China",0.0215,"w",393
 1399310,1371998,"Zhanjiang","China",0.0199,"w",394
 1396632,1381498,"Bucaramanga","Colombia",0.011,"w",395
-1394518,1387840,"San Diego","CA",0.0048,"us","United States",396
+1394518,1387840,"San Diego","CA",0.0048,"us",396
 1393453,1329284,"Uyo","Nigeria",0.0483,"w",397
 1391205,1381005,"Copenhagen","Denmark",0.0074,"w",398
 1387377,1354025,"Shiyan","China",0.0246,"w",399
@@ -427,7 +427,7 @@
 1324111,1291280,"Astana","Kazakhstan",0.0254,"w",426
 1320779,1282479,"Jieyang","China",0.0299,"w",427
 1317276,1304565,"Fushun Liaoning","China",0.0097,"w",428
-1317210,1308377,"Dallas","TX",0.0068,"us","United States",429
+1317210,1308377,"Dallas","TX",0.0068,"us",429
 1316461,1288245,"Mysore","India",0.0219,"w",430
 1314916,1252890,"Abomey-Calavi","Benin",0.0495,"w",431
 1314784,1281790,"Ruian","China",0.0257,"w",432
@@ -595,16 +595,16 @@
 1003016,958548,"Lubango","Angola",0.0464,"w",594
 1002461,988744,"Morelia","Mexico",0.0139,"w",595
 1001155,970129,"Jos","Nigeria",0.032,"w",596
-1000135,985727,"Jacksonville","FL",0.0146,"us","United States",597
+1000135,985727,"Jacksonville","FL",0.0146,"us",597
 999374,964291,"Sylhet","Bangladesh",0.0364,"w",598
 998146,979248,"Agadir","Morocco",0.0193,"w",599
-995049,975879,"Fort Worth","TX",0.0196,"us","United States",600
+995049,975879,"Fort Worth","TX",0.0196,"us",600
 993352,995078,"Volgograd","Russia",-0.0017,"w",601
 992414,975348,"Mudanjiang","China",0.0175,"w",602
 990310,967428,"Guigang","China",0.0237,"w",603
 987814,958487,"Najaf","Iraq",0.0306,"w",604
 985965,958335,"Bangui","Central African Republic",0.0288,"w",605
-984655,979551,"Austin","TX",0.0052,"us","United States",606
+984655,979551,"Austin","TX",0.0052,"us",606
 983707,961991,"Rajshahi","Bangladesh",0.0226,"w",607
 983694,955663,"Hengshui","China",0.0293,"w",608
 983097,969804,"Jerusalem","Israel",0.0137,"w",609
@@ -632,7 +632,7 @@
 956976,927532,"Baishan","China",0.0317,"w",631
 951808,948149,"Nice","France",0.0039,"w",632
 950768,935947,"Oran","Algeria",0.0158,"w",633
-950767,961000,"San Jose","CA",-0.0106,"us","United States",634
+950767,961000,"San Jose","CA",-0.0106,"us",634
 947734,934341,"West Rand","South Africa",0.0143,"w",635
 947634,904676,"Cabinda","Angola",0.0475,"w",636
 947460,904139,"Umuahia","Nigeria",0.0479,"w",637
@@ -647,7 +647,7 @@
 932648,917936,"Dandong","China",0.016,"w",646
 930620,910743,"Changzhi","China",0.0218,"w",647
 929961,915060,"Hermosillo","Mexico",0.0163,"w",648
-928154,912937,"Charlotte","NC",0.0167,"us","United States",649
+928154,912937,"Charlotte","NC",0.0167,"us",649
 924670,906581,"Bhiwandi","India",0.02,"w",650
 923715,914036,"La Plata","Argentina",0.0106,"w",651
 922871,917032,"Liverpool","United Kingdom",0.0064,"w",652
@@ -657,7 +657,7 @@
 919026,898338,"Changde","China",0.023,"w",656
 918675,913376,"Bergamo","Italy",0.0058,"w",657
 918218,894388,"Firozabad","India",0.0266,"w",658
-917811,912891,"Columbus","OH",0.0054,"us","United States",659
+917811,912891,"Columbus","OH",0.0054,"us",659
 917639,896716,"Erbil","Iraq",0.0233,"w",660
 916862,903815,"Tyumen","Russia",0.0144,"w",661
 916632,903896,"Trujillo","Peru",0.0141,"w",662
@@ -680,7 +680,7 @@
 882986,861978,"Xinghua","China",0.0244,"w",679
 882209,887716,"Donetsk","Ukraine",-0.0062,"w",680
 881480,864910,"Yibin","China",0.0192,"w",681
-877023,878822,"Indianapolis","IN",-0.002,"us","United States",682
+877023,878822,"Indianapolis","IN",-0.002,"us",682
 875552,846560,"Enugu","Nigeria",0.0342,"w",683
 875392,869625,"Tainan","Taiwan",0.0066,"w",684
 873268,855191,"Xinyang","China",0.0211,"w",685
@@ -742,7 +742,7 @@
 808263,792620,"Amravati","India",0.0197,"w",741
 808079,796509,"Jiaozuo","China",0.0145,"w",742
 802900,793927,"Vereeniging","South Africa",0.0113,"w",743
-802805,805621,"San Francisco","CA",-0.0035,"us","United States",744
+802805,805621,"San Francisco","CA",-0.0035,"us",744
 801634,788276,"Gorakhpur","India",0.0169,"w",745
 800636,778187,"Gaza","Palestine",0.0288,"w",746
 800529,796437,"Frankfurt","Germany",0.0051,"w",747
@@ -760,7 +760,7 @@
 786843,781047,"Hamilton","Canada",0.0074,"w",759
 786197,766007,"Zaria","Nigeria",0.0264,"w",760
 785125,770959,"Banjarmasin","Indonesia",0.0184,"w",761
-784754,767005,"Seattle","WA",0.0231,"us","United States",762
+784754,767005,"Seattle","WA",0.0231,"us",762
 783041,759150,"Dengzhou","China",0.0315,"w",763
 783020,767161,"Belgaum","India",0.0207,"w",764
 781925,764628,"Malegaon","India",0.0226,"w",765
